@@ -1,4 +1,5 @@
-pragma solidity >=0.4.25 <0.7.0;
+// "SPDX-License-Identifier: mit"
+pragma solidity >=0.4.25 < 0.7.5;
 
 
 contract Hello {
