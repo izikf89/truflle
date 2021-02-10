@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="web3.min.js"></script>
+    <script type="text/javascript" src="truffle-contract.min.js"></script>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <h2>res string: <span id="resString"></span></h2>
+    <h2>res number: <span id="resNumber"></span></h2>
+
+    <script async>
+        (async () => {
+            const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+            const hello_artifacts = (await (await fetch('./build/contracts/Hello.json')).json());
+            const contractAbstraction = TruffleContract(hello_artifacts);
+            contractAbstraction.setProvider(web3.currentProvider);
+            const dep = await contractAbstraction.deployed();
+
+            const resString = await dep.getHello();
+            const resNumber = (await dep.getNumber()).words[0];
+
+            console.log(resString, resNumber)
+            document.getElementById('resString').innerText = resString;
+            document.getElementById('resNumber').innerText = resNumber;
+        })();
+    </script>
+
+</body>
+</html>
