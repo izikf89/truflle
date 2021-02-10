@@ -1,4 +1,4 @@
-# Sample ethereum
+# Introduction
 
 minimaze project whith truffle and live-server of nodejs.
 
@@ -53,4 +53,8 @@ all next command run in cmd in root folder,
 <a href="https://www.trufflesuite.com/"><strong>truffle</strong></a>
 <br>
 <a href="https://www.npmjs.com/package/ganache-cli"><strong>ganache-cli npm page</strong></a>
+<br>
+<a href="https://web3js.readthedocs.io/en/v1.3.1/web3-eth-contract.html"><strong>web3js</strong></a>
+<br>
+<a href="https://docs.metamask.io/guide/#why-metamask"><strong>metamask</strong></a>
 <br>

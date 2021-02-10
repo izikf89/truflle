@@ -13,8 +13,10 @@
     <script async>
         (async () => {
             const web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+
             const hello_artifacts = (await (await fetch('./build/contracts/Hello.json')).json());
-            const contractAbstraction = TruffleContract(hello_artifacts);
+            const contractAbstraction = TruffleContract(hello_artifacts);    
+                   
             contractAbstraction.setProvider(web3.currentProvider);
             const dep = await contractAbstraction.deployed();
 
